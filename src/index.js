@@ -22,5 +22,15 @@ ReactDOM.render(
     <App />,
   document.getElementById('root')
 );
+/* setTimeout(()=>{
+    ReactDOM.render(
+        <h2>.....</h2>,
+        document.getElementById('root')
+        
+    );
+},4000); */
+
+
+
 //can put javascript in directly using {} the math.random function is JS
 //Use className instead of class for bootstrap stuff 
