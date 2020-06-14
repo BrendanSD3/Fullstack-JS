@@ -12,7 +12,7 @@ server.on('request', (req, res) => {
 }); */ //HTTP server
 
 // Express Server
-import config from './config';
+/* import config from './config';
 import express from 'express';
 //import fs from 'fs';
 import apiRouter from './api';
@@ -40,11 +40,31 @@ server.get('/', (req, res) => {
     });
 
 }); */ //this can be simpler check it out below 
-
+/*
 server.use(express.static('public'));
 
 server.use('api', apiRouter);
 
 server.listen(config.port, () => {
     console.info('express listening on port ', config.port);
+}); */
+import config from './config';
+import apiRouter from './api';
+
+import express from 'express';
+const server = express();
+
+server.set('view engine', 'ejs');
+
+server.get('/', (req, res) => {
+    res.render('index', {
+        content: '...'
+    });
+});
+
+server.use('/api', apiRouter);
+server.use(express.static('public'));
+
+server.listen(config.port, () => {
+    console.info('Express listening on port', config.port);
 });
