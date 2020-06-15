@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
 //import Header from './components/Header'
 import App from './components/App';
-
+//import data from './testData';
 
 /* App.propTypes = {
     headerMessage: React.PropTypes.string
@@ -19,7 +19,7 @@ import App from './components/App';
 
 ReactDOM.render(
 
-    <App />,
+    <App initialContests={[]}/>,
   document.getElementById('root')
 );
 /* setTimeout(()=>{
