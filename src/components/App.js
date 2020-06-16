@@ -1,43 +1,30 @@
 import React from 'react';
 import Header from './Header';
-import axios from 'axios';
 import ContestPreview from './ContestPreview';
 
-//import data from '../testData';
-//introducing state
-class App extends React.Component{
-    state ={ 
-        pageHeader:'Naming Contests',
-        contests:this.props.initialContests
-    };
+class App extends React.Component {
+  state = {
+    pageHeader: 'Naming Contests',
+    contests: this.props.initialContests
+  };
+  componentDidMount() {
 
-    componentDidMount(){
-    //timers,listeners, ajax
-    axios.get('/api/contests')
-        .then (resp=>{
-    this.setState({
-        contests: resp.data.contests
-    });
-    })
-        .catch(console.error);
-   }
-
-   componentWillUnmount(){
-        //clean timers,listeners
-    }
-    render(){
-        return(
-            <div className="App">
-                <Header message={this.state.pageHeader}/>
-          <div>
-              {this.state.contests.map(contest=>
-                <ContestPreview key={contest.id} {...contest}/>
-                )}
-              
-          </div>
-          </div>
-        
-        );
-    }   
+  }
+  componentWillUnmount() {
+    // clean timers, listeners
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header message={this.state.pageHeader} />
+        <div>
+          {this.state.contests.map(contest =>
+            <ContestPreview key={contest.id} {...contest} />
+          )}
+        </div>
+      </div>
+    );
+  }
 }
+
 export default App;
