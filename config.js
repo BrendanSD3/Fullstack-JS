@@ -9,6 +9,8 @@ export const logStars = function(message) {
 };
 
 export default {
+    mongodbUri: 'mongodb+srv://Bren:aDVwU3VDLjI2gGih@cluster0-evy3n.mongodb.net/test?retryWrites=true&w=majority',
+    //mongodbUri: 'mongodb://localhost:27017/test',
     port: env.PORT || 8080,
     host: env.HOST || '0.0.0.0',
     get serverUrl() {
